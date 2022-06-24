@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Piscokku</title>
+  <!-- <link href="../styles/styles.css" rel="stylesheet" type="text/css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body>
+  <%- include('./components/header'); %>
+
+    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+
+      <div class="max-w-lg mx-auto">
+        <h1 class="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">PISCOKKU</h1>
+
+        <p class="max-w-md mx-auto mt-4 text-center text-gray-500">
+          Sign Up
+        </p>
+        <% if(typeof message !='undefined' ){ %>
+          <div class="p-4 text-red-700 border rounded border-red-900/10 bg-red-50 m-3" role="alert">
+            <strong class="text-sm font-medium"> Failed Sign up - <%= message %> </strong>
+          </div>
+          <%}%>
+
+
+
+            <form action="/register" method="POST" class="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+              <p class="text-lg font-medium">Sign Up</p>
+
+              <div>
+                <label for="username" class="text-sm font-medium">Username</label>
+
+                <div class="relative mt-1">
+                  <input type="username" id="username" name="name" required
+                    class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                    placeholder="Enter username" />
+                </div>
+              </div>
+              <div>
+                <label for="number" class="text-sm font-medium">Number</label>
+
+                <div class="relative mt-1">
+                  <input type="number" id="number" name="number" required
+                    class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter number" />
+                </div>
+              </div>
+
+              <div>
+                <label for="password" class="text-sm font-medium">Password</label>
+
+                <div class="relative mt-1">
+                  <input type="password" id="password" name="password" required
+                    class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                    placeholder="Enter password" />
+                </div>
+              </div>
+
+              <button type="submit"
+                class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                Sign Up
+              </button>
+
+              <p class="text-sm text-center text-gray-500">
+                Already have an account?
+                <a class="underline" href="/login">Log in</a>
+              </p>
+            </form>
+      </div>
+    </div>
+</body>
+
+</html>
